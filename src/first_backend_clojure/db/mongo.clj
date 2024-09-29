@@ -35,11 +35,11 @@
     (let [result (mc/find-one-as-map db "app" {:app name})]
       (if (= result nil)
         false
-        (let[{:keys [_id]} result]
-        {:id (.toString _id)
-         :app (:app result)
-         :supported-platform (:supported-platform result)
-         :creator (:creator result)}))))
+        (let [{:keys [_id]} result]
+          {:id (.toString _id)
+           :app (:app result)
+           :supported-platform (:supported-platform result)
+           :creator (:creator result)}))))
 
 
   (defn update!

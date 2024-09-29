@@ -10,7 +10,6 @@
 
 (defn -main
   []
-  (println "passing requests")
   (raj/run-jetty (-> fbcr/app-routes
                      rmkp/wrap-keyword-params
                      rmp/wrap-params)
